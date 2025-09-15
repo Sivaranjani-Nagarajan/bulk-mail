@@ -1,3 +1,18 @@
+import express from "express";
+import cors from "cors";
+import nodemailer from "nodemailer";
+import mongoose from "mongoose";
+import dotenv from "dotenv";
+
+dotenv.config(); // load environment variables
+
+const app = express(); // CREATE THE EXPRESS APP
+
+app.use(express.json()); // for parsing JSON
+app.use(cors());
+
+app.get("/", (req, res) => res.send("Backend is running!"));
+
 app.post("/sendemail", async (req, res) => {
     try {
         console.log("Request body:", req.body);
