@@ -23,6 +23,10 @@ const credentialSchema = new mongoose.Schema({}, { strict: false })
 
 const credential = mongoose.model("credential",credentialSchema,"bulkmail")
 
+app.get("/", (req, res) => {
+    res.send("Backend is running!");
+});
+
 
 app.post("/sendemail", function (req, res) {
 
