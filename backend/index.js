@@ -80,6 +80,5 @@ new Promise(async function (resolve, reject) {
 
 })
 
-app.listen(5000, function () {
-    console.log("Server Started ...")
-})
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
